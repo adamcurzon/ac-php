@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Resources\CarResource;
 use App\Models\Car;
+use App\Models\CarManufacture;
+use App\Models\CarModel;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class CarController extends Controller
 {
@@ -22,7 +25,10 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render("Add", [
+            "manufactures" => CarManufacture::all(),
+            "models" => CarModel::all()
+        ]);
     }
 
     /**
@@ -30,7 +36,7 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $request)
     {
-        return new CarResource(Car::create($request->all()));
+        Car::create($request->all());
     }
 
     /**

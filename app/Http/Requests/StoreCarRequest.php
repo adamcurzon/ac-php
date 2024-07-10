@@ -22,7 +22,10 @@ class StoreCarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required"
+            "name" => "required",
+            "year" => "required",
+            "car_model_id" => "required",
+            "car_manufacture_id" => "required"
         ];
     }
 }

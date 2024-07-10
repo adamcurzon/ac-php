@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <nav>
+        <div class="container">
+            AC PHP
+        </div>
+    </nav>
     @inertia
 </body>
 

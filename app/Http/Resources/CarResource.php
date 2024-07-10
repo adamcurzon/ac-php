@@ -18,6 +18,7 @@ class CarResource extends JsonResource
             "id" => $this->id,
             "name" => $this->name,
             "created_at" => $this->created_at->format("d/m/Y"),
+            "model" => $this->model->name,
         ];
     }
 }
