@@ -27,7 +27,7 @@ class HomeController extends Controller
 
     public function getRecentCars()
     {
-        // return CarResource::collection(Car::orderBy("created_at", "desc")->take(5)->get());
+        return CarResource::collection(Car::orderBy("created_at", "desc")->take(5)->get());
     }
 
     public function recentCar()
