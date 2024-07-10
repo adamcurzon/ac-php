@@ -1,12 +1,10 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render("Index");
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/demo', function () {
     return response()->json(["Demo" => "test"]);
